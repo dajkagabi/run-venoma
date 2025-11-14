@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 
 @theme {
-  /**/
+  
   --font-primary: "Teko";
   --font-secondary: "Poppins";
   --color-primary: #252525;
@@ -89,9 +89,11 @@ h1, h2, h3, h4, h5, h6{
   @apply bg-accent hover:bg-accent-hover transition-all duration-300;
 }
 
-.btn-icon{
+
+.btn-icon {
   @apply w-[52px] h-[52px] flex items-center justify-center cursor-pointer;
 }
+
 
 .input {
   @apply h-[54px] border border-grey200 outline-none; 
