@@ -1,4 +1,3 @@
-//Font megváltoztatása
 import { Teko, Poppins } from "next/font/google";
 import "./globals.css";
 

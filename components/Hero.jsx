@@ -138,6 +138,7 @@ export default function Hero() {
           animation: float-delayed 4s ease-in-out infinite;
         }
       `}</style>
+      
     </section>
   );
 }
