@@ -57,7 +57,7 @@ export default function Latest() {
   }, [api])
 
   return (
-    <section className="w-full py-16 bg-white border-t border-b border-gray-200">
+    <section id="latest" className="w-full py-16 bg-white border-t border-b border-gray-200">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-primary font-bold text-primary text-center mb-12">
           LATEST PRODUCTS

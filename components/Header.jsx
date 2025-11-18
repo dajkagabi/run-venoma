@@ -17,11 +17,38 @@ import {
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   const navigationItems = [
-    { name: 'Men', href: '/men', icon: UserIcon },
-    { name: 'Women', href: '/women', icon: SparklesIcon },
-    { name: 'Kids', href: '/kids', icon: TrophyIcon },
-    { name: 'Sale', href: '/sale', icon: FireIcon },
+    { 
+      name: 'Men', 
+      sectionId: 'hero', 
+      icon: UserIcon 
+    },
+    { 
+      name: 'Women', 
+      sectionId: 'latest', 
+      icon: SparklesIcon 
+    },
+    { 
+      name: 'Kids', 
+      sectionId: 'category', 
+      icon: TrophyIcon 
+    },
+    { 
+      name: 'Sale', 
+      sectionId: 'latest', 
+      icon: FireIcon 
+    },
   ];
 
   return (
@@ -29,9 +56,12 @@ const Header = () => {
       <header className="bg-white border-b border-grey200">
         <div className="container mx-auto">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Logo  */}
+            {/* Logo */}
             <div className="flex-1">
-              <a href="/" className="flex items-center">
+              <button 
+                onClick={() => scrollToSection('hero')}
+                className="flex items-center"
+              >
                 <div className="relative w-32 h-8">
                   <Image
                     src="/logo.svg"
@@ -41,30 +71,30 @@ const Header = () => {
                     priority
                   />
                 </div>
-              </a>
+              </button>
             </div>
 
-            {/* Asztali */}
+            {/* Asztali navigáció */}
             <nav className="hidden lg:flex flex-1 justify-center">
               <ul className="flex space-x-8">
                 {navigationItems.map((item) => {
                   const IconComponent = item.icon;
                   return (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="link-primary text-lg hover:text-accent flex items-center space-x-2"
+                      <button
+                        onClick={() => scrollToSection(item.sectionId)}
+                        className="link-primary text-lg hover:text-accent flex items-center space-x-2 transition-colors duration-200"
                       >
                         <IconComponent className="w-5 h-5" />
                         <span>{item.name}</span>
-                      </a>
+                      </button>
                     </li>
                   );
                 })}
               </ul>
             </nav>
 
-            {/*Hambruger menü, ikonokkal */}
+            {/* Ikonok */}
             <div className="flex items-center space-x-4 lg:flex-1 lg:justify-end">
               <button className="btn-icon">
                 <MagnifyingGlassIcon className="w-6 h-6 text-primary" />
@@ -76,7 +106,7 @@ const Header = () => {
                 <ShoppingBagIcon className="w-6 h-6 text-primary" />
               </button>
               
-              {/* Hamburger  */}
+              {/* Hamburger menu */}
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsMobileMenuOpen(true)}
@@ -99,7 +129,7 @@ const Header = () => {
             onClick={() => setIsMobileMenuOpen(false)}
           ></div>
           
-          {/* Menu Panel  */}
+          {/* Menu Panel */}
           <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-xl">
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-grey200">
@@ -119,21 +149,20 @@ const Header = () => {
               </button>
             </div>
 
-            {/* Items*/}
+            {/* Navigációs items */}
             <nav className="p-4">
               <ul className="space-y-2">
                 {navigationItems.map((item) => {
                   const IconComponent = item.icon;
                   return (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="flex items-center space-x-3 p-3 link-primary text-lg hover:bg-grey50 rounded-lg transition-all duration-300"
-                        onClick={() => setIsMobileMenuOpen(false)}
+                      <button
+                        onClick={() => scrollToSection(item.sectionId)}
+                        className="flex items-center space-x-3 p-3 link-primary text-lg hover:bg-grey50 rounded-lg transition-all duration-300 w-full text-left"
                       >
                         <IconComponent className="w-6 h-6" />
                         <span>{item.name}</span>
-                      </a>
+                      </button>
                     </li>
                   );
                 })}

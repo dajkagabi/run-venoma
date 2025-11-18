@@ -2,7 +2,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
 export default function About() {
   return (
-    <section className="min-h-screen w-full bg-white text-primary-900 py-20 px-6 md:px-12 lg:px-24">
+    <section id="women" className="min-h-screen w-full bg-white text-primary-900 py-20 px-6 md:px-12 lg:px-24">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         {/* */}
         <div className="space-y-6">

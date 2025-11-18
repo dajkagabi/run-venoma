@@ -30,7 +30,7 @@ export default function Category() {
   ]
 
   return (
-    <section className="w-full py-16 bg-gray-50">
+    <section id="category" className="w-full py-16 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-gray-900 tracking-tight">

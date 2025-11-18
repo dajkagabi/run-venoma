@@ -22,7 +22,6 @@ const page = () => {
       <About/>
       <Cta/>
       <Footer/>
-    <div className='h-[7680]'></div>
     </div>
   )
 }
