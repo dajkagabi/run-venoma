@@ -84,7 +84,7 @@ export default function Category() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="px-8 py-3 bg-accent2 text-primary rounded-lg text-base font-medium hover:bg-accent transition-colors shadow-md hover:shadow-lg">
+          <button className="px-8 py-3 bg-accent-hover text-primary rounded-lg text-base font-medium hover:bg-accent transition-colors shadow-md hover:shadow-lg">
             View All Collections
           </button>
         </div>
