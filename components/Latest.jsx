@@ -51,7 +51,7 @@ export default function Latest() {
 
     const interval = setInterval(() => {
       api.scrollNext()
-    }, 7000)
+    }, 5000)
 
     return () => clearInterval(interval)
   }, [api])
